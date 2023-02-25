@@ -2,6 +2,7 @@ package keeper
 
 import (
 	"context"
+	"fmt"
 
 	"hello/x/hello/types"
 
@@ -20,5 +21,5 @@ func (k Keeper) SayHello(goCtx context.Context, req *types.QuerySayHelloRequest)
 	// TODO: Process the query
 	_ = ctx
 
-	return &types.QuerySayHelloResponse{}, nil
+	return &types.QuerySayHelloResponse{Name: fmt.Sprintf("Hello, %s!", req.Name)}, nil
 }
