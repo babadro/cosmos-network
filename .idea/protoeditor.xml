@@ -19,6 +19,9 @@
         <ImportPathEntry>
           <option name="location" value="file://$USER_HOME$/go/pkg/mod/github.com/gogo/googleapis@v1.1.0" />
         </ImportPathEntry>
+        <ImportPathEntry>
+          <option name="location" value="file://$PROJECT_DIR$/ignite/hello/proto" />
+        </ImportPathEntry>
       </list>
     </option>
     <option name="descriptorPath" value="google/protobuf/descriptor.proto" />
