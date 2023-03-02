@@ -30,7 +30,7 @@ func (k Keeper) GetPostCount(ctx sdk.Context) uint64 {
 }
 
 func GetPostIDBytes(id uint64) []byte {
-	bz := make([]byte, 0)
+	bz := make([]byte, 8)
 	binary.BigEndian.PutUint64(bz, id)
 
 	return bz
