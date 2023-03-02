@@ -6,6 +6,7 @@ import (
 
 	"blog/x/blog/types"
 
+	"github.com/cosmos/cosmos-sdk/store/prefix"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
@@ -27,4 +28,9 @@ func (k msgServer) UpdatePost(goCtx context.Context, msg *types.MsgUpdatePost) (
 	}
 	k.SetPost(ctx, post)
 	return &types.MsgUpdatePostResponse{}, nil
+}
+
+func (k Keeper) RemovePost(ctx sdk.Context, id uint64) {
+	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.PostKey))
+	store.Delete(GetPostIDBytes(id))
 }
