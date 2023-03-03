@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="365e1e75-6692-4cb5-91a7-d2a046d26117" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ignite/blog/docs/static/openapi.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ignite/blog/docs/static/openapi.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ignite/blog/x/blog/keeper/msg_server_create_post.go" beforeDir="false" afterPath="$PROJECT_DIR$/ignite/blog/x/blog/keeper/msg_server_create_post.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ignite/loan/x/loan/client/cli/tx_liquidate_loan.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ignite/loan/x/loan/keeper/msg_server_liquidate_loan.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ignite/loan/x/loan/simulation/liquidate_loan.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ignite/loan/x/loan/types/message_liquidate_loan.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ignite/loan/x/loan/types/message_liquidate_loan_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ignite/loan/docs/static/openapi.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ignite/loan/docs/static/openapi.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ignite/loan/proto/loan/loan/tx.proto" beforeDir="false" afterPath="$PROJECT_DIR$/ignite/loan/proto/loan/loan/tx.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ignite/loan/x/loan/client/cli/tx.go" beforeDir="false" afterPath="$PROJECT_DIR$/ignite/loan/x/loan/client/cli/tx.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ignite/loan/x/loan/module_simulation.go" beforeDir="false" afterPath="$PROJECT_DIR$/ignite/loan/x/loan/module_simulation.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ignite/loan/x/loan/types/codec.go" beforeDir="false" afterPath="$PROJECT_DIR$/ignite/loan/x/loan/types/codec.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ignite/loan/x/loan/types/tx.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/ignite/loan/x/loan/types/tx.pb.go" afterDir="false" />
     </list>
-    <list id="74e9eaff-136a-4091-bc27-c2ef6e8845ae" name="idea" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list id="74e9eaff-136a-4091-bc27-c2ef6e8845ae" name="idea" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +35,7 @@
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="ir30uwik" />
@@ -82,7 +92,15 @@
     <MESSAGE value="show a post" />
     <MESSAGE value="list posts" />
     <MESSAGE value="fix getPostID error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix getPostID error" />
+    <MESSAGE value="fix create post" />
+    <MESSAGE value="update openapi after fix proto file: renaming field: create -&gt; creator" />
+    <MESSAGE value="scaffold bank module" />
+    <MESSAGE value="scaffold loan model" />
+    <MESSAGE value="scaffold request-loan message" />
+    <MESSAGE value="scaffold message approve-loan" />
+    <MESSAGE value="scaffold message repay-loan" />
+    <MESSAGE value="gitignore workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore workspace" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
