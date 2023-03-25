@@ -3,12 +3,13 @@ package keeper
 import (
 	"errors"
 
+	"interchange/x/dex/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	clienttypes "github.com/cosmos/ibc-go/v6/modules/core/02-client/types"
 	channeltypes "github.com/cosmos/ibc-go/v6/modules/core/04-channel/types"
 	host "github.com/cosmos/ibc-go/v6/modules/core/24-host"
-	"interchange/x/dex/types"
 )
 
 // TransmitCreatePairPacket transmits the packet over IBC with the specified source port and source channel
@@ -40,8 +41,23 @@ func (k Keeper) OnRecvCreatePairPacket(ctx sdk.Context, packet channeltypes.Pack
 		return packetAck, err
 	}
 
-	// TODO: packet reception logic
+	// Get an order book index
+	pairIndex := types.OrderBookIndex(packet.SourcePort, packet.SourceChannel, data.SourceDenom, data.TargetDenom)
 
+	// If an order book is found, return an error
+	_, found := k.GetBuyOrderBook(ctx, pairIndex)
+	if found {
+		return packetAck, errors.New("the pair already exist")
+	}
+
+	// Create a new buy order book for source and target denoms
+	book := types.NewBuyOrderBook(data.SourceDenom, data.TargetDenom)
+
+	// Assign order book index
+	book.Index = pairIndex
+
+	// Save the order book to the store
+	k.SetBuyOrderBook(ctx, book)
 	return packetAck, nil
 }
 
